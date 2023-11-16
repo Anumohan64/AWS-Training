@@ -1,0 +1,18 @@
+resource "aws_instance" "LinuxServerEC2" {
+  
+        ami ="ami-06791f213cbb608b"
+        instance_type = "t2.micro"
+        key_name = "Anu" 
+        subnet_id = "subnet-0eb49cc9e17c678ef"
+ 
+        vpc_security_group_ids = ["sg-0145afa83a97771c1"]
+        
+    tags = {
+        Name = "108Batch_TerraformClass"
+         }
+}
+ 
+ 
+provider "aws" {
+  region = "ap-south-1"
+}

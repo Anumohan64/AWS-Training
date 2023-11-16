@@ -1,0 +1,17 @@
+resource "aws_instance" "LinuxServerEC2" {
+  
+        ami ="ami-05c0f5389589545b7"
+        instance_type = "t2.micro"
+        key_name = "SivAWSTraining" 
+        subnet_id = "subnet-068ee84819ea85332"
+ 
+        vpc_security_group_ids = ["sg-091a2c3425aa8d69b"]
+    tags = {
+        Name = "108Batch_TerraformClass"
+         }
+}
+ 
+ 
+provider "aws" {
+  region = "ap-south-1"
+}
